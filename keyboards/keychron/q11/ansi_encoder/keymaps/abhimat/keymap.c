@@ -78,6 +78,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 // On release
             }
             return false;
+        case VOLD_FINE:
+            if (record->event.pressed) {
+                register_code(KC_LOPT);
+                register_code(KC_LSFT);
+                register_code(KC_VOLD);
+            } else {
+                unregister_code(KC_LOPT);
+                unregister_code(KC_LSFT);
+                unregister_code(KC_VOLD);
+            }
+            return false;
+        case VOLU_FINE:
+            if (record->event.pressed) {
+                register_code(KC_LOPT);
+                register_code(KC_LSFT);
+                register_code(KC_VOLU);
+            } else {
+                unregister_code(KC_LOPT);
+                unregister_code(KC_LSFT);
+                unregister_code(KC_VOLU);
+            }
+            return false;
     }
     return true;
 }
@@ -130,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [MAC_BASE] = { ENCODER_CCW_CW(ZOOM_M, ZOOM_P), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [MAC_BASE] = { ENCODER_CCW_CW(ZOOM_M, ZOOM_P), ENCODER_CCW_CW(VOLD_FINE, VOLU_FINE) },
     [MAC_FN]   = { ENCODER_CCW_CW(RM_VALD, RM_VALU), ENCODER_CCW_CW(RM_VALD, RM_VALU) },
     [WIN_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [WIN_FN]   = { ENCODER_CCW_CW(RM_VALD, RM_VALU), ENCODER_CCW_CW(RM_VALD, RM_VALU) }
@@ -170,4 +192,3 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 //  #    include OTHER_KEYMAP_C
 //  #endif // OTHER_KEYMAP_C
 //
-

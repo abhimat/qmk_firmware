@@ -18,3 +18,8 @@
 
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 23
+
+// #undef VENDOR_ID
+// #undef PRODUCT_ID
+// #define VENDOR_ID  0x05AC // Apple
+// #define PRODUCT_ID 0x0220 // Aluminum Keyboard (ANSI)

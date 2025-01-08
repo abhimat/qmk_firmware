@@ -29,7 +29,9 @@ enum my_keycodes {
     AP_SPTL,
     ZOOM_0,
     ZOOM_P,
-    ZOOM_M
+    ZOOM_M,
+    VOLD_FINE,
+    VOLU_FINE
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
